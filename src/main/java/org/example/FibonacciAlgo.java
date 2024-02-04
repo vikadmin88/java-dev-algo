@@ -12,7 +12,7 @@ public class FibonacciAlgo {
         int iterNum = 30;
         long startTime;
         long duration;
-        long result = 0;
+        long result;
         System.out.println("**************************** Run once, num: " + iterNum + " ****************************");
 
         // iteration O(n)
