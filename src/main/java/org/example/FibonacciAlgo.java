@@ -8,6 +8,7 @@ public class FibonacciAlgo {
     private static final List<Long> fibCacheArr = new ArrayList<>();
     private static final Random RAND = new Random();
 
+    // URL to UML in file url-to-UML.txt
     public static void main(String[] args) {
         int iterNum = 30;
         long startTime;
@@ -66,24 +67,21 @@ public class FibonacciAlgo {
     // Complexity O(n)
     public static long fibonacciIteration(int numIter) {
 
-        long result = numIter;
-
         if (numIter <= 1) {
             return numIter;
-        } else if (numIter == 2) {
-            return 1;
-        } else {
-
-            long[] fibNums = new long[numIter + 1];
-            fibNums[0] = 0;
-            fibNums[1] = 1;
-
-            for (int i = 2; i <= numIter; i++) {
-                fibNums[i] = fibNums[i - 1] + fibNums[i - 2];
-                result = fibNums[i];
-            }
-            return result;
         }
+        if (numIter == 2) {
+            return 1;
+        }
+
+        long[] fibNums = new long[numIter + 1];
+        fibNums[0] = 0;
+        fibNums[1] = 1;
+
+        for (int i = 2; i <= numIter; i++) {
+            fibNums[i] = fibNums[i - 1] + fibNums[i - 2];
+        }
+        return fibNums[numIter];
     }
 
     // Complexity O(2^n)
